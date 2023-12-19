@@ -1,53 +1,26 @@
-import "./index.css";
+/* GLOBAL VARIABLES */
+import { celsius, fahrenheit } from "./index";
 
 /* SELECTORS */
-const cityName = document.querySelector(".main__city-name");
-const date = document.querySelector(".main__date");
-const weatherIcon = document.querySelector(".main__weather-icon");
-const weatherCondition = document.querySelector(".main__weather-condition");
+import {
+  cityName,
+  date,
+  weatherIcon,
+  weatherCondition,
+  temperature,
+  temperatureFeeling,
+  searchInput,
+  UVIndexInfo,
+  windStatusInfo,
+  humidityInfo,
+  visibilityInfo,
+  pressureInfo,
+  precipitationInfo,
+  fahrenheitButton,
+} from "./selectors";
 
-const temperature = document.querySelector(".main__current-temperature");
-const temperatureFeeling = document.querySelector(".main__feeling-temperature");
-
-const searchInput = document.getElementById("searchInput");
-const submitSearch = document.querySelector(".main__submit-search");
-
-const UVIndexInfo = document.getElementById("UV-index");
-const windStatusInfo = document.getElementById("wind-status");
-const humidityInfo = document.getElementById("humidity");
-const visibilityInfo = document.getElementById("visibility");
-const pressureInfo = document.getElementById("pressure");
-const precipitationInfo = document.getElementById("precipitation");
-
-const celsiusButton = document.querySelector(".details__degree-celsius");
-const fahrenheitButton = document.querySelector(".details__degree-fahrenheit");
-
-function fetchAndShowData() {
-  fetch(
-    `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=${searchInput.value}`
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((response) => {
-      left(response);
-      verifyWeatherCondition(response);
-      right(response);
-    });
-}
-
-// Search for place event listener
-submitSearch.addEventListener("click", (event) => {
-  // Prevent the default form submission behavior
-  event.preventDefault();
-
-  fetchAndShowData();
-});
-
-let celsius = true;
-let fahreinheit = false;
-
-function left(APIObject) {
+//  Updates primary weather information (city-name, date, weather-condition, temperature and temperature-feeling) elements with data from the provided APIObject.
+export function primaryInfo(APIObject) {
   // The city name
   cityName.textContent = APIObject.location.name;
   // The time
@@ -55,12 +28,14 @@ function left(APIObject) {
   // The weather condition name
   weatherCondition.textContent = `Weather condition: ${APIObject.current.condition.text}`;
 
-  if (celsius === true) {
+  // If celsius is true, temperature will be displayed in celsius.
+  if (celsius) {
     // The current weather temperature
     temperature.textContent = `${APIObject.current.temp_c}°`;
     // What the temperature feels like
     temperatureFeeling.textContent = `Feels like: ${APIObject.current.feelslike_c}°`;
-  } else if (fahreinheit === true) {
+  } // If fahrenheit is true, temperature will be displayed in celsius.
+  else if (fahrenheit) {
     // The current weather temperature
     temperature.textContent = `${APIObject.current.temp_f}°`;
     // What the temperature feels like
@@ -68,23 +43,8 @@ function left(APIObject) {
   }
 }
 
-celsiusButton.addEventListener("click", () => {
-  celsiusButton.classList.add("button-active");
-  fahrenheitButton.classList.remove("button-active");
-  celsius = true;
-  fahreinheit = false;
-  fetchAndShowData();
-});
-
-fahrenheitButton.addEventListener("click", () => {
-  fahrenheitButton.classList.add("button-active");
-  celsiusButton.classList.remove("button-active");
-  fahreinheit = true;
-  celsius = false;
-  fetchAndShowData();
-});
-
-function right(APIObject) {
+// Updates secondary weather information (UV-index, wind-speed, humidity, visibility, pressure and precipitation) elements with data from the provided APIObject.
+export function secondaryInfo(APIObject) {
   // The UV Index
   UVIndexInfo.textContent = `${APIObject.current.uv}`;
   // The wind status (speed)
@@ -99,7 +59,8 @@ function right(APIObject) {
   precipitationInfo.textContent = `${APIObject.current.precip_mm} mm`;
 }
 
-function verifyWeatherCondition(APIObject) {
+// Sets the weather icon based on the current weather condition obtained from the provided APIObject.
+export function verifyWeatherCondition(APIObject) {
   // The weather icon
   if (APIObject.current.condition.text === "Sunny") {
     weatherIcon.textContent = "☀️";
@@ -154,4 +115,19 @@ function verifyWeatherCondition(APIObject) {
   } else {
     weatherIcon.textContent = "❓"; // Unknown or other conditions
   }
+}
+
+// Gets data from the API and calls the functions that are designed to show the data, to show data on website.
+export function fetchAndShowData() {
+  fetch(
+    `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=${searchInput.value}`
+  )
+    .then((response) => {
+      return response.json();
+    })
+    .then((response) => {
+      primaryInfo(response);
+      verifyWeatherCondition(response);
+      secondaryInfo(response);
+    });
 }
