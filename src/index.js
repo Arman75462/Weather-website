@@ -12,6 +12,13 @@ const temperatureFeeling = document.querySelector(".main__feeling-temperature");
 const searchInput = document.getElementById("searchInput");
 const submitSearch = document.querySelector(".main__submit-search");
 
+const UVIndexInfo = document.getElementById("UV-index");
+const windStatusInfo = document.getElementById("wind-status");
+const humidityInfo = document.getElementById("humidity");
+const visibilityInfo = document.getElementById("visibility");
+const pressureInfo = document.getElementById("pressure");
+const precipitationInfo = document.getElementById("precipitation");
+
 // AddEventListener
 submitSearch.addEventListener("click", (event) => {
   // Prevent the default form submission behavior
@@ -91,5 +98,18 @@ submitSearch.addEventListener("click", (event) => {
       } else {
         weatherIcon.textContent = "❓"; // Unknown or other conditions
       }
+
+      // The UV Index
+      UVIndexInfo.textContent = `${response.current.uv}`;
+      // The wind status (speed)
+      windStatusInfo.textContent = `${response.current.wind_kph} km/h`;
+      // Humidity
+      humidityInfo.textContent = `${response.current.humidity} %`;
+      // Visibility
+      visibilityInfo.textContent = `${response.current.vis_km} km`;
+      // Pressure
+      pressureInfo.textContent = `${response.current.pressure_in}%`;
+      // Precipitation
+      precipitationInfo.textContent = `${response.current.precip_mm} mm`;
     });
 });
