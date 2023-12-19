@@ -54,7 +54,7 @@ export function secondaryInfo(APIObject) {
   // Visibility
   visibilityInfo.textContent = `${APIObject.current.vis_km} km`;
   // Pressure
-  pressureInfo.textContent = `${APIObject.current.pressure_in}%`;
+  pressureInfo.textContent = `${APIObject.current.pressure_in} inHg`;
   // Precipitation
   precipitationInfo.textContent = `${APIObject.current.precip_mm} mm`;
 }
@@ -119,15 +119,29 @@ export function verifyWeatherCondition(APIObject) {
 
 // Gets data from the API and calls the functions that are designed to show the data, to show data on website.
 export function fetchAndShowData() {
-  fetch(
-    `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=${searchInput.value}`
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((response) => {
-      primaryInfo(response);
-      verifyWeatherCondition(response);
-      secondaryInfo(response);
-    });
+  if (searchInput.value === "") {
+    fetch(
+      `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=laval`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        primaryInfo(response);
+        verifyWeatherCondition(response);
+        secondaryInfo(response);
+      });
+  } else {
+    fetch(
+      `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=${searchInput.value}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((response) => {
+        primaryInfo(response);
+        verifyWeatherCondition(response);
+        secondaryInfo(response);
+      });
+  }
 }

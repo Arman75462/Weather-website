@@ -10,7 +10,10 @@ import { fetchAndShowData } from "./functions";
 export let celsius = true;
 export let fahrenheit = false;
 
-// Search for place event listener
+// Call the function to display Laval temperature information.
+fetchAndShowData();
+
+// Search for a city, event listener.
 submitSearch.addEventListener("click", (event) => {
   // Prevent the default form submission behavior
   event.preventDefault();
@@ -18,6 +21,7 @@ submitSearch.addEventListener("click", (event) => {
   fetchAndShowData();
 });
 
+// When clicking celsiusButton, make the temperature info go from fahrenheit to celsius.
 celsiusButton.addEventListener("click", () => {
   celsiusButton.classList.add("button-active");
   fahrenheitButton.classList.remove("button-active");
@@ -26,6 +30,7 @@ celsiusButton.addEventListener("click", () => {
   fetchAndShowData();
 });
 
+// When clicking celsiusButton, make the temperature info go from celsius to fahrenheit.
 fahrenheitButton.addEventListener("click", () => {
   fahrenheitButton.classList.add("button-active");
   celsiusButton.classList.remove("button-active");
