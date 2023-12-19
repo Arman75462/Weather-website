@@ -121,7 +121,6 @@ body {
 /*============================
 SPECIFIC LAYOUT AND STYLES=
 ==============================*/
-
 /* 1- MAIN */
 .main {
   background-color: whitesmoke;
@@ -201,11 +200,18 @@ SPECIFIC LAYOUT AND STYLES=
   align-items: center;
   cursor: pointer;
   transition: transform 250ms;
+  background-color: whitesmoke;
+}
+
+.button-active {
+  background-color: black;
+  color: whitesmoke;
 }
 
 .details__degree-celsius:hover,
 .details__degree-fahrenheit:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .details__degree-celsius {
@@ -222,12 +228,12 @@ SPECIFIC LAYOUT AND STYLES=
 
 /* 4- HIGHLIGHTS-CARD */
 .details__highlights-card {
-  width: calc(33.33% - 40px); /* 20px is the total margin between the cards */
+  width: calc(33.33% - 40px); /* 40px is the total margin between the cards */
   margin: 20px;
   border-radius: 10px;
   padding: 1.5em;
   background-color: whitesmoke;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .details__highlights-card-icon {
