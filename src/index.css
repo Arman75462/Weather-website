@@ -14,9 +14,8 @@ RESETS=====================
   padding: 0;
 }
 
-/* Better readability for line-height and text rendering */
+/* Better text rendering */
 body {
-  line-height: calc(1em + 0.5rem);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -56,6 +55,21 @@ h6 {
   overflow-wrap: break-word;
 }
 
+/* Better readability for paragraph line-height */
+p {
+  line-height: 1.1;
+}
+
+/* Better readability for titles' line-height */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+}
+
 /* Improved focus styles */
 a,
 button {
@@ -82,7 +96,7 @@ GENERAL LAYOUT AND STYLES==
 ==============================*/
 /* 2- MAIN-CONTAINER */
 .main__container {
-  width: 85%;
+  width: 75%;
   margin: 0 auto;
   padding: 2em 0;
   display: flex;
@@ -130,20 +144,20 @@ SPECIFIC LAYOUT AND STYLES=
 
 /* 3- CITY-NAME */
 .main__city-name {
-  margin: 1em 0em 1.5em;
-  font-size: 5rem;
+  margin-top: 0.5em;
+  font-size: 4rem;
 }
 
 /* 3- WEATHER-ICON */
 .main__weather-icon {
   font-size: 10rem;
-  margin-bottom: 0.8em;
+  margin-top: 0.8em 0;
 }
 
 /* 3- CURRENT-TEMPERATURE */
 .main__current-temperature {
   font-size: 6rem;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
 }
 
 /* 3- FEELING-TEMPERATURE */
@@ -154,7 +168,7 @@ SPECIFIC LAYOUT AND STYLES=
 
 /* 3- WEATHER-CONDITION */
 .main__weather-condition {
-  margin-bottom: 7em;
+  margin-bottom: 1em;
 }
 
 /* 1- DETAILS */
