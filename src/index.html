@@ -1,9 +1,112 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- TAB TITLE -->
+    <title>Weather Website</title>
   </head>
-  <body></body>
+  <!-- BODY -->
+  <body>
+    <!-- 1- MAIN -->
+    <main class="main">
+      <!-- 2- CONTAINER -->
+      <div class="container">
+        <!-- 3- SEARCHBAR -->
+        <form action="" class="main__search-city">
+          <input
+            type="search"
+            id="searchInput"
+            name="searchInput"
+            placeholder="Search for places..."
+          />
+          <button type="submit" class="main__submit-search">🔎</button>
+        </form>
+        <!-- 3- CITY-NAME -->
+        <h1 class="main__city-name">Laval</h1>
+        <!-- 3- WEATHER-ICON -->
+        <div class="main__weather-icon"></div>
+        <!-- 3- CURRENT-TEMPERATURE -->
+        <p class="main__current-temperature">7°</p>
+        <!-- 3- FEELING-TEMPERATURE -->
+        <p class="main__feeling-temperature">Feels like:</p>
+        <!-- 3- DATE -->
+        <p class="main__date">December 15, 2023</p>
+        <!-- 3- WEATHER-CONDITION -->
+        <p class="main__weather-condition">Cloudy</p>
+      </div>
+    </main>
+    <!-- 1- DETAILS -->
+    <section class="details">
+      <!-- 2- CONTAINER -->
+      <div class="container">
+        <section class="details__header">
+          <h2 class="details__name">Today's Highlights</h2>
+          <section class="details__convert-temperature">
+            <div class="details__degree-celsius"></div>
+            <div class="details__degree-fahrenheit"></div>
+          </section>
+        </section>
+        <!-- 3- HIGHLIGHTS -->
+        <section class="highlights">
+          <!-- 4- HIGHTLIGHTS-CARD-1 -->
+          <section class="details__highlights-card details__highlights-card1">
+            <h3
+              class="details__highlights-card-title details__highlights-card-title1"
+            ></h3>
+            <p
+              class="details__highlights-card-text details__highlights-card-text1"
+            ></p>
+          </section>
+          <!-- 4- HIGHTLIGHTS-CARD-2 -->
+          <section class="details__highlights-card details__highlights-card2">
+            <h3
+              class="details__highlights-card-title details__highlights-card-title2"
+            ></h3>
+            <p
+              class="details__highlights-card-text details__highlights-card-text2"
+            ></p>
+          </section>
+          <!-- 4- HIGHTLIGHTS-CARD-3 -->
+          <section class="details__highlights-card details__highlights-card3">
+            <h3
+              class="details__highlights-card-title details__highlights-card-title3"
+            ></h3>
+            <p
+              class="details__highlights-card-text details__highlights-card-text3"
+            ></p>
+          </section>
+          <!-- 4- HIGHTLIGHTS-CARD-4 -->
+          <section class="details__highlights-card details__highlights-card4">
+            <h3
+              class="details__highlights-card-title details__highlights-card-title4"
+            ></h3>
+            <p
+              class="details__highlights-card-text details__highlights-card-text4"
+            ></p>
+          </section>
+          <!-- 4- HIGHTLIGHTS-CARD-5 -->
+          <section class="details__highlights-card details__highlights-card5">
+            <h3
+              class="details__highlights-card-title details__highlights-card-title5"
+            ></h3>
+            <p
+              class="details__highlights-card-text details__highlights-card-text5"
+            ></p>
+          </section>
+          <!-- 4- HIGHTLIGHTS-CARD-6 -->
+          <section class="details__highlights-card details__highlights-card6">
+            <h3
+              class="details__highlights-card-title details__highlights-card-title6"
+            ></h3>
+            <p
+              class="details__highlights-card-text details__highlights-card-text6"
+            ></p>
+          </section>
+        </section>
+      </div>
+    </section>
+  </body>
 </html>
