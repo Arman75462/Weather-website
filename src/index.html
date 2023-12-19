@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,9 +13,9 @@
     <!-- 1- MAIN -->
     <main class="main">
       <!-- 2- CONTAINER -->
-      <div class="container">
+      <div class="main__container">
         <!-- 3- SEARCHBAR -->
-        <form action="" class="main__search-city">
+        <form action="#" class="main__search-city">
           <input
             type="search"
             id="searchInput"
@@ -27,83 +27,91 @@
         <!-- 3- CITY-NAME -->
         <h1 class="main__city-name">Laval</h1>
         <!-- 3- WEATHER-ICON -->
-        <div class="main__weather-icon"></div>
+        <div class="main__weather-icon">🌥</div>
         <!-- 3- CURRENT-TEMPERATURE -->
         <p class="main__current-temperature">7°</p>
         <!-- 3- FEELING-TEMPERATURE -->
-        <p class="main__feeling-temperature">Feels like:</p>
-        <!-- 3- DATE -->
-        <p class="main__date">December 15, 2023</p>
+        <p class="main__feeling-temperature">Feels like: 3.2°</p>
         <!-- 3- WEATHER-CONDITION -->
         <p class="main__weather-condition">Cloudy</p>
+        <!-- 3- DATE -->
+        <p class="main__date">December 15, 2023</p>
       </div>
     </main>
     <!-- 1- DETAILS -->
     <section class="details">
       <!-- 2- CONTAINER -->
-      <div class="container">
+      <div class="details__container">
+        <!-- 3- HEADER -->
         <section class="details__header">
           <h2 class="details__name">Today's Highlights</h2>
+          <!-- 5- CONVERT-TEMPERATURE -->
           <section class="details__convert-temperature">
-            <div class="details__degree-celsius"></div>
-            <div class="details__degree-fahrenheit"></div>
+            <div class="details__degree-celsius">°C</div>
+            <div class="details__degree-fahrenheit">°F</div>
           </section>
         </section>
         <!-- 3- HIGHLIGHTS -->
-        <section class="highlights">
+        <section class="details__highlights">
           <!-- 4- HIGHTLIGHTS-CARD-1 -->
-          <section class="details__highlights-card details__highlights-card1">
-            <h3
-              class="details__highlights-card-title details__highlights-card-title1"
-            ></h3>
-            <p
-              class="details__highlights-card-text details__highlights-card-text1"
-            ></p>
+          <section class="details__highlights-card">
+            <img
+              src="images/uv.png"
+              alt="UV-rays-icon"
+              class="details__highlights-card-icon"
+            />
+            <h3 class="details__highlights-card-title">UV Index</h3>
+            <p class="details__highlights-card-text">4</p>
           </section>
           <!-- 4- HIGHTLIGHTS-CARD-2 -->
-          <section class="details__highlights-card details__highlights-card2">
-            <h3
-              class="details__highlights-card-title details__highlights-card-title2"
-            ></h3>
-            <p
-              class="details__highlights-card-text details__highlights-card-text2"
-            ></p>
+          <section class="details__highlights-card">
+            <img
+              src="images/wind.png"
+              alt="wind-icon"
+              class="details__highlights-card-icon"
+            />
+            <h3 class="details__highlights-card-title">Wind Status</h3>
+            <p class="details__highlights-card-text">7,70 km/h</p>
           </section>
           <!-- 4- HIGHTLIGHTS-CARD-3 -->
-          <section class="details__highlights-card details__highlights-card3">
-            <h3
-              class="details__highlights-card-title details__highlights-card-title3"
-            ></h3>
-            <p
-              class="details__highlights-card-text details__highlights-card-text3"
-            ></p>
+          <section class="details__highlights-card">
+            <img
+              src="images/humidity.png"
+              alt="humidity-icon"
+              class="details__highlights-card-icon"
+            />
+            <h3 class="details__highlights-card-title">Humidity</h3>
+            <p class="details__highlights-card-text">96%</p>
           </section>
           <!-- 4- HIGHTLIGHTS-CARD-4 -->
-          <section class="details__highlights-card details__highlights-card4">
-            <h3
-              class="details__highlights-card-title details__highlights-card-title4"
-            ></h3>
-            <p
-              class="details__highlights-card-text details__highlights-card-text4"
-            ></p>
+          <section class="details__highlights-card">
+            <img
+              src="images/witness.png"
+              alt="eye-icon"
+              class="details__highlights-card-icon"
+            />
+            <h3 class="details__highlights-card-title">Visibility</h3>
+            <p class="details__highlights-card-text">5.2 km</p>
           </section>
           <!-- 4- HIGHTLIGHTS-CARD-5 -->
-          <section class="details__highlights-card details__highlights-card5">
-            <h3
-              class="details__highlights-card-title details__highlights-card-title5"
-            ></h3>
-            <p
-              class="details__highlights-card-text details__highlights-card-text5"
-            ></p>
+          <section class="details__highlights-card">
+            <img
+              src="images/pressure-gauge.png"
+              alt="pressure-instrument-icon"
+              class="details__highlights-card-icon"
+            />
+            <h3 class="details__highlights-card-title">Pressure</h3>
+            <p class="details__highlights-card-text">120 kp</p>
           </section>
           <!-- 4- HIGHTLIGHTS-CARD-6 -->
-          <section class="details__highlights-card details__highlights-card6">
-            <h3
-              class="details__highlights-card-title details__highlights-card-title6"
-            ></h3>
-            <p
-              class="details__highlights-card-text details__highlights-card-text6"
-            ></p>
+          <section class="details__highlights-card">
+            <img
+              src="images/raining.png"
+              alt="rain-drop-icon"
+              class="details__highlights-card-icon"
+            />
+            <h3 class="details__highlights-card-title">Precipitation</h3>
+            <p class="details__highlights-card-text">5mm</p>
           </section>
         </section>
       </div>

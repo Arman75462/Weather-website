@@ -1,7 +1,7 @@
-/* Your Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
 
 /*============================
-1- RESETS=====================
+RESETS=====================
 ==============================*/
 *,
 *::before,
@@ -78,9 +78,150 @@ button {
 }
 
 /*============================
-1- GENERAL LAYOUT AND STYLES==
+GENERAL LAYOUT AND STYLES==
 ==============================*/
+/* 2- MAIN-CONTAINER */
+.main__container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 2em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 2- DETAILS-CONTAINER */
+.details__container {
+  width: 85%;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+/* BODY */
+body {
+  display: flex;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
 
 /*============================
-1- SPECIFIC LAYOUT AND STYLES=
+SPECIFIC LAYOUT AND STYLES=
 ==============================*/
+
+/* 1- MAIN */
+.main {
+  background-color: whitesmoke;
+  width: 25%;
+}
+
+/* 3- SEARCHBAR  */
+#searchInput {
+  padding: 0.5em 0.5em 0.5em 2.2em;
+  background-color: transparent;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.main__submit-search {
+  position: relative;
+  right: 245px;
+  background-color: transparent;
+}
+
+/* 3- CITY-NAME */
+.main__city-name {
+  margin: 1em 0em 1.5em;
+  font-size: 5rem;
+}
+
+/* 3- WEATHER-ICON */
+.main__weather-icon {
+  font-size: 10rem;
+  margin-bottom: 0.8em;
+}
+
+/* 3- CURRENT-TEMPERATURE */
+.main__current-temperature {
+  font-size: 6rem;
+  margin-bottom: 0.5em;
+}
+
+/* 3- FEELING-TEMPERATURE */
+.main__feeling-temperature {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+}
+
+/* 3- WEATHER-CONDITION */
+.main__weather-condition {
+  margin-bottom: 7em;
+}
+
+/* 1- DETAILS */
+.details {
+  width: 75%;
+  background-color: rgb(229, 229, 229);
+}
+
+/* 3- HEADER */
+.details__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 4- CONVERT-TEMPERATURE */
+.details__convert-temperature {
+  display: flex;
+}
+
+.details__degree-celsius,
+.details__degree-fahrenheit {
+  border-radius: 50%;
+  border: 2px solid black;
+  height: 2.5em;
+  width: 2.5em;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 250ms;
+}
+
+.details__degree-celsius:hover,
+.details__degree-fahrenheit:hover {
+  transform: scale(1.1);
+}
+
+.details__degree-celsius {
+  margin-right: 1em;
+}
+
+/* 3- HIGHLIGHTS */
+.details__highlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 3em;
+}
+
+/* 4- HIGHLIGHTS-CARD */
+.details__highlights-card {
+  width: calc(33.33% - 40px); /* 20px is the total margin between the cards */
+  margin: 20px;
+  border-radius: 10px;
+  padding: 1.5em;
+  background-color: whitesmoke;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adjust the values as needed */
+}
+
+.details__highlights-card-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1em;
+}
+
+.details__highlights-card-title {
+  margin-bottom: 1em;
+}
