@@ -73,21 +73,17 @@ export function verifyWeatherCondition(APIObject) {
   } else if (
     APIObject.current.condition.text === "Light rain" ||
     APIObject.current.condition.text === "Patchy rain possible" ||
-    APIObject.current.condition.text === "Mist"
+    APIObject.current.condition.text === "Mist" ||
+    APIObject.current.condition.text === "Moderate rain"
   ) {
     weatherIcon.textContent = "🌧";
   } else if (
-    APIObject.current.condition.text === "Patchy light rain with thunder" ||
-    "Moderate or heavy rain with thunder"
-  ) {
-    weatherIcon.textContent = "⛈";
-  } else if (
     APIObject.current.condition.text === "Snow" ||
-    APIObject.current.condition.text === "Patchy snow possible"
+    APIObject.current.condition.text === "Light snow" ||
+    APIObject.current.condition.text === "Patchy snow possible" ||
+    APIObject.current.condition.text === "Patchy light snow"
   ) {
-    weatherIcon.textContent = "❄️";
-  } else if (APIObject.current.condition.text === "Fog") {
-    weatherIcon.textContent = "🌫";
+    weatherIcon.textContent = "🌨";
   } else if (APIObject.current.condition.text === "Freezing fog") {
     weatherIcon.textContent = "🥶";
   } else if (
@@ -98,20 +94,19 @@ export function verifyWeatherCondition(APIObject) {
   } else if (APIObject.current.condition.text === "Thunderstorm") {
     weatherIcon.textContent = "🌩";
   } else if (
-    APIObject.current.condition.text === "Hail" ||
-    APIObject.current.condition.text === "Moderate or heavy sleet"
-  ) {
-    weatherIcon.textContent = "🌨";
-  } else if (
     APIObject.current.condition.text === "Dust" ||
-    APIObject.current.condition.text === "Patchy light drizzle"
+    APIObject.current.condition.text === "Patchy light drizzle" ||
+    APIObject.current.condition.text === "Haze" ||
+    APIObject.current.condition.text === "Smoke" ||
+    APIObject.current.condition.text === "Fog" ||
+    APIObject.current.condition.text === "Clear"
   ) {
     weatherIcon.textContent = "🌫";
   } else if (
-    APIObject.current.condition.text === "Haze" ||
-    APIObject.current.condition.text === "Smoke"
+    APIObject.current.condition.text === "Patchy light rain with thunder" ||
+    "Moderate or heavy rain with thunder"
   ) {
-    weatherIcon.textContent = "🌫";
+    weatherIcon.textContent = "⛈";
   } else {
     weatherIcon.textContent = "❓"; // Unknown or other conditions
   }
