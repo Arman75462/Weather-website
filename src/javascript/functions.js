@@ -16,7 +16,7 @@ import {
   visibilityInfo,
   pressureInfo,
   precipitationInfo,
-  fahrenheitButton,
+  detailsName,
 } from "./selectors";
 
 //  Updates primary weather information (city-name, date, weather-condition, temperature and temperature-feeling) elements with data from the provided APIObject.
@@ -112,25 +112,38 @@ export function verifyWeatherCondition(APIObject) {
   }
 }
 
+// Function to update detailsName with error styles
+function showErrorMessage(message) {
+  detailsName.textContent = message;
+  detailsName.style.color = "red";
+  detailsName.style.fontWeight = "900";
+}
+
+// Function to reset detailsName styles
+function resetDetailsNameStyles() {
+  detailsName.textContent = "Current Highlights";
+  detailsName.style.color = "";
+  detailsName.style.fontWeight = "";
+}
+
 // Gets data from the API and calls the functions that are designed to show the data, to show data on website.
 export async function fetchAndShowData() {
-  if (searchInput.value === "") {
-    let theAPI = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=laval`
-    );
+  try {
+    let apiEndpoint =
+      searchInput.value === ""
+        ? "https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=laval"
+        : `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=${searchInput.value}`;
+    let theAPI = await fetch(apiEndpoint);
     let response = await theAPI.json();
 
     primaryInfo(response);
     verifyWeatherCondition(response);
     secondaryInfo(response);
-  } else {
-    let theAPI = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=${searchInput.value}`
-    );
-    let response = await theAPI.json();
 
-    primaryInfo(response);
-    verifyWeatherCondition(response);
-    secondaryInfo(response);
+    // Reset styles when there is no error
+    resetDetailsNameStyles();
+  } catch {
+    // Set error styles when there's an error
+    showErrorMessage("Enter a valid city name");
   }
 }

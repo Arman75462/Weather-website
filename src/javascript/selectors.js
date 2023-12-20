@@ -13,6 +13,7 @@ export const temperatureFeeling = document.querySelector(
 export const searchInput = document.getElementById("searchInput");
 export const submitSearch = document.querySelector(".main__submit-search");
 
+export const detailsName = document.querySelector(".details__name");
 export const UVIndexInfo = document.getElementById("UV-index");
 export const windStatusInfo = document.getElementById("wind-status");
 export const humidityInfo = document.getElementById("humidity");
