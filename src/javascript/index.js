@@ -7,8 +7,10 @@ import { submitSearch, celsiusButton, fahrenheitButton } from "./selectors";
 import { fetchAndShowData } from "./functions";
 
 /* GLOBAL VARIABALES */
+/* eslint-disable import/no-mutable-exports */
 export let celsius = true;
 export let fahrenheit = false;
+/* eslint-enable import/no-mutable-exports */
 
 // Call the function to display Laval temperature information.
 fetchAndShowData();

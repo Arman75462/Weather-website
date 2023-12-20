@@ -104,7 +104,7 @@ export function verifyWeatherCondition(APIObject) {
     weatherIcon.textContent = "🌫";
   } else if (
     APIObject.current.condition.text === "Patchy light rain with thunder" ||
-    "Moderate or heavy rain with thunder"
+    APIObject.current.condition.text === "Moderate or heavy rain with thunder"
   ) {
     weatherIcon.textContent = "⛈";
   } else {
@@ -129,12 +129,12 @@ function resetDetailsNameStyles() {
 // Gets data from the API and calls the functions that are designed to show the data, to show data on website.
 export async function fetchAndShowData() {
   try {
-    let apiEndpoint =
+    const apiEndpoint =
       searchInput.value === ""
         ? "https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=laval"
         : `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=${searchInput.value}`;
-    let theAPI = await fetch(apiEndpoint);
-    let response = await theAPI.json();
+    const theAPI = await fetch(apiEndpoint);
+    const response = await theAPI.json();
 
     primaryInfo(response);
     verifyWeatherCondition(response);
