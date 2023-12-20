@@ -168,6 +168,7 @@ SPECIFIC LAYOUT AND STYLES=
 /* 3- WEATHER-CONDITION */
 .main__weather-condition {
   margin-bottom: 1em;
+  text-align: center;
 }
 
 /* 1- DETAILS */

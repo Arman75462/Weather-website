@@ -113,30 +113,24 @@ export function verifyWeatherCondition(APIObject) {
 }
 
 // Gets data from the API and calls the functions that are designed to show the data, to show data on website.
-export function fetchAndShowData() {
+export async function fetchAndShowData() {
   if (searchInput.value === "") {
-    fetch(
+    let theAPI = await fetch(
       `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=laval`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        primaryInfo(response);
-        verifyWeatherCondition(response);
-        secondaryInfo(response);
-      });
+    );
+    let response = await theAPI.json();
+
+    primaryInfo(response);
+    verifyWeatherCondition(response);
+    secondaryInfo(response);
   } else {
-    fetch(
+    let theAPI = await fetch(
       `https://api.weatherapi.com/v1/current.json?key=2539b1e0094247a1aa3160336231212&q=${searchInput.value}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((response) => {
-        primaryInfo(response);
-        verifyWeatherCondition(response);
-        secondaryInfo(response);
-      });
+    );
+    let response = await theAPI.json();
+
+    primaryInfo(response);
+    verifyWeatherCondition(response);
+    secondaryInfo(response);
   }
 }
